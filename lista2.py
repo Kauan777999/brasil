@@ -45,3 +45,46 @@ def media_desvio(n, x):
     desvio_padrao = math.sqrt((soma2 - (soma ** 2) / n) / (n - 1))
 
     return media, desvio_padrao
+
+#Questão 6
+
+def matriz_maior(A, m, n):
+    # { vetor contendo o maior elemento de cada linha }
+    for i in range(m):  # para i ← 1 até m faça (em Python é de 0 até m-1)
+        Maior = A[i][0]  # Maior(i) ← A(i, 1)
+
+        for j in range(1, n):  # para j ← 2 até n faça (começa do índice 1)
+            if A[i][j] > Maior:  # se A(i,j) > Maior(i) então
+                Maior = A[i][j]  # Maior(i) ← A(i,j)
+        
+        print(f"{i}: {Maior}")  # escreva i, Maior(i)
+
+#Questão 7
+
+def calcular_pi(n):
+    pi = 0
+    for k in range(n):
+        pi += (-1)**k / (2*k + 1)
+    return 4 * pi
+
+valores_n = [10, 100, 1000, 10000]
+
+for n in valores_n:
+    print(n, calcular_pi(n))
+
+#Questão 8
+
+def raiz_babilonica(a):
+    x = a  
+    while abs(x - a / x) > 1e-6:
+        x = (x + a / x) / 2
+    return x  
+
+valores_a = [2, 10, 25, 50]
+
+for a in valores_a:
+    print(a, raiz_babilonica(a))
+
+
+
+
